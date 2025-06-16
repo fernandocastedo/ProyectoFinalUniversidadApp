@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="ProyectoFinalUniversidadApp.Views.UC_ReportMateriasOfertadas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+             xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms">
+    <Grid>
+        <wfi:WindowsFormsHost x:Name="wfHost">
+            <rv:ReportViewer x:Name="reportViewer"/>
+        </wfi:WindowsFormsHost>
+    </Grid>
+</UserControl>

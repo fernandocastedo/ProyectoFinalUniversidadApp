@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1652.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataSetAsistenciaEstudiante.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSetAsistenciaEstudiante.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSetBoletin.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSetBoletin.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSetMateriasOfertadas.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSetMateriasOfertadas.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSetNotasMateriasCursadas.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSetNotasMateriasCursadas.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataSetAsistenciaEstudiante.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAsistenciaEstudiante.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSetBoletin.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBoletin.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSetMateriasOfertadas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMateriasOfertadas.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSetNotasMateriasCursadas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNotasMateriasCursadas.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
