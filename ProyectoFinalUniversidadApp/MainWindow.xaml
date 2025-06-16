@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinalUniversidadApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Universidad – Reportes"
+        Height="600" Width="900">
+    <DockPanel>
 
-    </Grid>
+        <!-- Barra de menú -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Reportes">
+                <MenuItem Header="Materias ofertadas"
+                          Command="{Binding CambiarVistaCmd}"
+                          CommandParameter="Materias"/>
+                <MenuItem Header="Asistencia estudiante"
+                          CommandParameter="Asistencia"
+                          Command="{Binding CambiarVistaCmd}"/>
+                <MenuItem Header="Notas materias cursadas"
+                          CommandParameter="Notas"
+                          Command="{Binding CambiarVistaCmd}"/>
+                <MenuItem Header="Boletín"
+                          CommandParameter="Boletin"
+                          Command="{Binding CambiarVistaCmd}"/>
+            </MenuItem>
+
+            <MenuItem Header="_Registrar">
+                <MenuItem Header="Estudiante"
+                          CommandParameter="RegEst"
+                          Command="{Binding CambiarVistaCmd}"/>
+                <MenuItem Header="Materia"
+                          CommandParameter="RegMat"
+                          Command="{Binding CambiarVistaCmd}"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Contenedor de vistas -->
+        <Frame x:Name="MainFrame"
+               Content="{Binding VistaActual}"
+               NavigationUIVisibility="Hidden"/>
+    </DockPanel>
 </Window>
