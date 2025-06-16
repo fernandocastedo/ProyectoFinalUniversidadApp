@@ -21,34 +21,28 @@ namespace ProyectoFinalUniversidadApp.Views
     /// </summary>
     public partial class UC_ReportMateriasOfertadas : UserControl
     {
+        private readonly IMateriaService _svc;
+
         public UC_ReportMateriasOfertadas()
         {
             InitializeComponent();
-            Loaded += OnLoaded;
+            _svc = App.Services.GetRequiredService<IMateriaService>();
         }
 
-        private async void OnLoaded(object s, RoutedEventArgs e)
+        private async void UserControl_Loaded(object s, RoutedEventArgs e)
         {
-            // 1. Obtener los datos desde la capa BLL (tu SP ya existe)
-            var servicio = App.Current.Services.GetRequiredService<IMateriaService>();
-            var datos = await servicio.GetMateriasOfertadasAsync(
-                            codCarrera, codPlan, anio, semestre);
+            // TODO: estos valores deberían venir de la UI (combos, textbox…)
+            var filtro = new MateriasFiltro(codCarrera: 101, codPlan: 1, anio: 2025, semestre: "I");
 
-            // 2. Configurar ReportViewer
+            var datos = await _svc.ObtenerOfertadasAsync(filtro);
+
             reportViewer.ProcessingMode = ProcessingMode.Local;
             reportViewer.LocalReport.ReportEmbeddedResource =
-                "UniversidadApp.Wpf.Reports.ReportMateriasOfertadas.rdlc";
+                "ProyectoFinalUniversidadApp.Reports.ReportMateriasOfertadas.rdlc";
 
             reportViewer.LocalReport.DataSources.Clear();
             reportViewer.LocalReport.DataSources.Add(
                 new ReportDataSource("DataSetMateriasOfertadas", datos));
-
-            // 3. Parámetros opcionales
-            reportViewer.LocalReport.SetParameters(new[]
-            {
-            new ReportParameter("pCarrera", codCarrera.ToString()),
-            new ReportParameter("pPlan", codPlan.ToString())
-        });
 
             reportViewer.RefreshReport();
         }
