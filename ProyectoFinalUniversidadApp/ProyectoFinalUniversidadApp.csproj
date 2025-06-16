@@ -21,11 +21,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Page Include="Views\MainWindow.xaml" />
-		<!-- Agregado -->
-	</ItemGroup>
-
-	<ItemGroup>
 		<Compile Update="DataSetAsistenciaEstudiante.Designer.cs">
 			<DesignTime>True</DesignTime>
 			<AutoGen>True</AutoGen>
