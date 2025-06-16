@@ -1,13 +1,16 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using Microsoft.Extensions.DependencyInjection;  // paquete agregado en el paso 1
+using ProyectoFinalUniversidadApp.BLL;
+using ProyectoFinalUniversidadApp.DAL;
 
 namespace ProyectoFinalUniversidadApp
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : System.Windows.Application
     {
         public static IServiceProvider Services { get; private set; } = null!;
 
@@ -16,7 +19,7 @@ namespace ProyectoFinalUniversidadApp
             var sc = new ServiceCollection();
 
             // conexión a tu BD
-            const string cn = "Data Source=FERCASTEDO;Initial Catalog=UniversidadDB;Integrated Security=True";
+            const string cn = "Data Source=FERCASTEDO;Initial Catalog=UniversidadDB2;Integrated Security=True";
 
             sc.AddSingleton<IMateriaRepository>(_ => new MateriaRepository(cn));
             sc.AddSingleton<IMateriaService, MateriaService>();

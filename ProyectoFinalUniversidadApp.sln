@@ -5,11 +5,11 @@ VisualStudioVersion = 17.14.36202.13 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidadApp", "ProyectoFinalUniversidadApp\ProyectoFinalUniversidadApp.csproj", "{FAC83374-483B-43D6-99A7-F409CAA22764}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidad.BLL", "UniversidadApp.BLL\ProyectoFinalUniversidad.BLL.csproj", "{C32F275D-5DF3-47E8-AD27-30B3E1666EFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidadApp.BLL", "UniversidadApp.BLL\ProyectoFinalUniversidadApp.BLL.csproj", "{C32F275D-5DF3-47E8-AD27-30B3E1666EFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidad.Shared", "UniversidadApp.Shared\ProyectoFinalUniversidad.Shared.csproj", "{90A79802-FD34-427C-8B31-0214E6FDB770}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidadApp.Shared", "UniversidadApp.Shared\ProyectoFinalUniversidadApp.Shared.csproj", "{90A79802-FD34-427C-8B31-0214E6FDB770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidad.ConsoleHost", "ProyectoFinalUniversidad.ConsoleHost\ProyectoFinalUniversidad.ConsoleHost.csproj", "{1C09339F-897F-4FC9-B042-208652931D44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidadApp.ConsoleHost", "ProyectoFinalUniversidad.ConsoleHost\ProyectoFinalUniversidadApp.ConsoleHost.csproj", "{1C09339F-897F-4FC9-B042-208652931D44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalUniversidadApp.DAL", "ProyectoFinalUniversidadApp.DAL\ProyectoFinalUniversidadApp.DAL.csproj", "{22785E91-D72B-4021-9B47-B905200B3711}"
 EndProject

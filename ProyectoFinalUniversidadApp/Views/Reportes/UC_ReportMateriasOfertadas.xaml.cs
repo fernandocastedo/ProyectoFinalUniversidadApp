@@ -1,4 +1,7 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Reporting.WinForms;
+using ProyectoFinalUniversidadApp.BLL;
+using ProyectoFinalUniversidadApp.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +22,7 @@ namespace ProyectoFinalUniversidadApp.Views
     /// <summary>
     /// Interaction logic for UC_ReportMateriasOfertadas.xaml
     /// </summary>
-    public partial class UC_ReportMateriasOfertadas : UserControl
+    public partial class UC_ReportMateriasOfertadas : System.Windows.Controls.UserControl
     {
         private readonly IMateriaService _svc;
 
@@ -31,10 +34,9 @@ namespace ProyectoFinalUniversidadApp.Views
 
         private async void UserControl_Loaded(object s, RoutedEventArgs e)
         {
-            // TODO: estos valores deberían venir de la UI (combos, textbox…)
-            var filtro = new MateriasFiltro(codCarrera: 101, codPlan: 1, anio: 2025, semestre: "I");
-
-            var datos = await _svc.ObtenerOfertadasAsync(filtro);
+            var filtro = new MateriasFiltro(101, 1, 2025, "I"); // valores de prueba
+            var svc = App.Services.GetRequiredService<IMateriaService>();
+            var datos = await svc.ObtenerOfertadasAsync(filtro);
 
             reportViewer.ProcessingMode = ProcessingMode.Local;
             reportViewer.LocalReport.ReportEmbeddedResource =
